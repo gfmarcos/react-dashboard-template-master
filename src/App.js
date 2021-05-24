@@ -5,7 +5,7 @@ import './App.css';
 import { AppRoutes } from './routes/AppRoutes';
 
 export const App = () => {
-  const [loggedIn, setLoggedIn] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(null);
 
   useEffect(() => {
     sessionStorage.getItem('logged') ? setLoggedIn(true) : setLoggedIn(false);
