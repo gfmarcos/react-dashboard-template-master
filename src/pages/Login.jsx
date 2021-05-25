@@ -5,13 +5,13 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
 // Necesitamos el useHistory para Navegar entre rutas
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 // Vamos a usar el helper MakeStyles de Material UI para personalizar estilos
 import { makeStyles } from '@material-ui/core/styles';
 
 // Componentes de Material UI
-import { Avatar, Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, TextField, Typography, Link, Box } from '@material-ui/core';
+import { Avatar, Button, Checkbox, Container, CssBaseline, FormControlLabel, Grid, TextField, Typography, Box } from '@material-ui/core';
 
 // Iconos de Material UI
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -140,7 +140,7 @@ const Login = ({ handleLoggedIn }) => {
             </Grid>
             {/* Registro */}
             <Grid item xs={12} sm={6}>
-              <Link href="#" variant="body2">
+            <Link to="/register" variant="body2">
                 {'No tengo cuenta'}
               </Link>
             </Grid>
