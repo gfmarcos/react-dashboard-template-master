@@ -20,8 +20,6 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
-console.log(creditCardsMapper());
-
 export const Home = () => {
   const classes = useStyles();
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
