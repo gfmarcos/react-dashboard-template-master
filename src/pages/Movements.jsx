@@ -8,6 +8,9 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { movementsMapper } from "../data/movementsMapper";
+import PublishRoundedIcon from "@material-ui/icons/PublishRounded";
+import GetAppRoundedIcon from "@material-ui/icons/GetAppRounded";
+import { green } from "@material-ui/core/colors";
 
 const useStyles = makeStyles({
   table: {
@@ -35,7 +38,17 @@ export const Movements = () => {
               <TableCell component="th" scope="row">
                 {movement.creditCard}
               </TableCell>
-              <TableCell align="center">{movement.amount} €</TableCell>
+              <TableCell align="center">
+                {movement.accountPayment ? (
+                  <PublishRoundedIcon
+                    fontSize="small"
+                    style={{ color: green[500] }}
+                  />
+                ) : (
+                  <GetAppRoundedIcon fontSize="small" color="secondary" />
+                )}{" "}
+                {movement.amount} €
+              </TableCell>
               <TableCell align="center">{movement.description}</TableCell>
               <TableCell align="right">{movement.transaction}</TableCell>
             </TableRow>

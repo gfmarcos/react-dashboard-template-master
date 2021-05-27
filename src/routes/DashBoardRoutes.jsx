@@ -4,7 +4,6 @@ import { Cart } from '../pages/Cart';
 import { Movements } from '../pages/Movements';
 import { Home } from '../pages/Home';
 import { Settings } from '../pages/Settings';
-// import { Movments } from '../components/Movments';
 
 const getComponent = (component) => {
   switch (component) {

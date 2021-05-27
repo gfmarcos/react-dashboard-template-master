@@ -131,7 +131,7 @@ const mainMenuList = [
   {
     text: 'Movimientos',
     path: '/movements',
-    icon: 'CONTACTS',
+    icon: 'MOVEMENTS',
   },
 ];
 

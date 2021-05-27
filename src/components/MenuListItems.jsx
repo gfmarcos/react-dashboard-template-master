@@ -1,22 +1,22 @@
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
-import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 // Iconos de Material UI
-import HomeIcon from '@material-ui/icons/Home';
-import CartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import SettingsIcon from '@material-ui/icons/Settings';
+import HomeIcon from "@material-ui/icons/Home";
+import CartIcon from "@material-ui/icons/ShoppingCart";
+import SettingsIcon from "@material-ui/icons/Settings";
+import SyncAltOutlinedIcon from "@material-ui/icons/SyncAltOutlined";
 
 const getIcon = (icon) => {
   switch (icon) {
-    case 'HOME':
+    case "HOME":
       return <HomeIcon />;
-    case 'CART':
+    case "CART":
       return <CartIcon />;
-    case 'PEOPLE':
-      return <PeopleIcon />;
-    case 'SETTINGS':
+    case "MOVEMENTS":
+      return <SyncAltOutlinedIcon />;
+    case "SETTINGS":
       return <SettingsIcon />;
     default:
       return <HomeIcon />;
@@ -37,7 +37,7 @@ const MenuListItems = ({ list, handleDrawer }) => {
         <ListItem key={index} button onClick={() => navegar(path)}>
           <ListItemIcon>
             {/* Llamamos al método getIcon que nos va a devover el 
-                            componente Icono que toque */}
+            componente Icono que toque */}
             {getIcon(icon)}
           </ListItemIcon>
           <ListItemText primary={text} />
