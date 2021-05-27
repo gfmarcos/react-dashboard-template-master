@@ -132,6 +132,11 @@ const mainMenuList = [
     path: '/contacts',
     icon: 'CONTACTS',
   },
+  {
+    text: 'Tarjetas',
+    path: '/tarjetas',
+    icon: 'TARJETAS',
+  },
 ];
 
 const secondaryMenuList = [

@@ -4,6 +4,7 @@ import { Cart } from '../pages/Cart';
 import { Contacts } from '../pages/Contacts';
 import { Home } from '../pages/Home';
 import { Settings } from '../pages/Settings';
+import { CreditCards } from '../pages/CreditCards';
 
 const getComponent = (component) => {
   switch (component) {
@@ -15,6 +16,8 @@ const getComponent = (component) => {
       return <Contacts />;
     case 'Settings':
       return <Settings />;
+    case 'Tarjetas':
+      return <CreditCards />;
     default:
       return <Home />;
   }
@@ -27,7 +30,7 @@ export const DashBoardRoutes = ({ pathMain, pathSecondary }) => {
     <>
       <Switch>
         {paths.map(({ path, text }, index) => (
-          <Route key={index} exact path={path} >
+          <Route key={index} exact path={path}>
             {getComponent(text)}
           </Route>
         ))}

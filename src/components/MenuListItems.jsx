@@ -8,6 +8,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import CartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import SettingsIcon from '@material-ui/icons/Settings';
+import CreditCardIcon from '@material-ui/icons/CreditCard';
 
 const getIcon = (icon) => {
   switch (icon) {
@@ -19,6 +20,8 @@ const getIcon = (icon) => {
       return <PeopleIcon />;
     case 'SETTINGS':
       return <SettingsIcon />;
+    case 'TARJETAS':
+      return <CreditCardIcon />;
     default:
       return <HomeIcon />;
   }
