@@ -17,6 +17,18 @@ const useStyles = makeStyles((theme) => {
       padding: theme.spacing(2),
       margin: theme.spacing(2),
     },
+    creditFlex: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexWrap: 'wrap',
+      '& > div': {
+        flexBasis: '32%',
+        marginBottom: '20px',
+      },
+    },
+    titleH1: {
+      marginBottom: '20px',
+    },
   };
 });
 
@@ -26,24 +38,26 @@ export const Home = () => {
 
   return (
     <>
-      <Grid item md={7}>
+      <Grid item md={7} >
         <Paper className={fixedHeightPaper}>
-          <Typography variant="h5" component="h1">
+          <Typography variant="h5" component="h1" className={classes.titleH1}>
             Tarjetas
           </Typography>
-          {creditCardsMapper().map((creditCard) => (
-            <CreditCard key={creditCard.id} {...creditCard} />
-          ))}
+          <div className={classes.creditFlex}>
+            {creditCardsMapper().map((creditCard) => (
+              <CreditCard key={creditCard.id} {...creditCard} />
+            ))}
+          </div>
         </Paper>
         <Paper className={fixedHeightPaper}>
-          <Typography variant="h5" component="h1">
+          <Typography variant="h5" component="h1" className={classes.titleH1}>
             Movimientos
           </Typography>
         </Paper>
       </Grid>
       <Grid item md={5}>
         <Paper className={fixedHeightPaper}>
-          <Typography variant="h5" component="h1">
+          <Typography variant="h5" component="h1" className={classes.titleH1}>
             Balance total
           </Typography>
         </Paper>

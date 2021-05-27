@@ -17,7 +17,8 @@ export const creditCards = [
     id: '3',
     type: '2',
     number: '5602217622678770',
-    bank: 'Otro',
+    bank: 'Caixa',
     accountType: '2',
   },
+
 ];
