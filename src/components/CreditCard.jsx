@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme) => {
   };
 });
 
+const complete = true;
+
 export const CreditCard = ({ bank, balance = 0, logo, name, number }) => {
   const classes = useStyles();
   return (
@@ -39,8 +41,10 @@ export const CreditCard = ({ bank, balance = 0, logo, name, number }) => {
       <CardContent>
         <h1 className={classes.name}>{bank}</h1>
         <h2 className={classes.balance}>{`${balance} €`}</h2>
+        {complete && 'COMPLETA'}
         <div className={classes.imgNumber}>
-          <div><img src={logo} className={classes.logo} alt={name} />
+          <div>
+            <img src={logo} className={classes.logo} alt={name} />
           </div>
           <h3 className={classes.number}>{number}</h3>
         </div>
