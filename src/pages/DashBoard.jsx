@@ -129,8 +129,8 @@ const mainMenuList = [
     icon: 'CART',
   },
   {
-    text: 'Contacts',
-    path: '/contacts',
+    text: 'Movimientos',
+    path: '/movements',
     icon: 'CONTACTS',
   },
 ];

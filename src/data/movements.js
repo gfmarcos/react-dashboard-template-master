@@ -5,14 +5,15 @@ export const movements = [
       amount: 1800,
       transaction: '05/04/2021',
       accountType: '1',
-      creditCardType: null,
+      creditCardType: '1',
     },
     {
       id: '2',
       description: 'Compra supermercado',
       amount: -68,
       transaction: '10/04/2021',
-      accountType: null,
+      accountType: '2',
       creditCardType: '2',
+      
     },
   ];

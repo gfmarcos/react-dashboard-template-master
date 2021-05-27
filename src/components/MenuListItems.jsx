@@ -27,7 +27,6 @@ const MenuListItems = ({ list, handleDrawer }) => {
   const history = useHistory();
 
   const navegar = (ruta) => {
-    console.log(ruta);
     history.push(ruta);
     handleDrawer();
   };

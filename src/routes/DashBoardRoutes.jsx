@@ -1,9 +1,10 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import { Cart } from '../pages/Cart';
-import { Contacts } from '../pages/Contacts';
+import { Movements } from '../pages/Movements';
 import { Home } from '../pages/Home';
 import { Settings } from '../pages/Settings';
+// import { Movments } from '../components/Movments';
 
 const getComponent = (component) => {
   switch (component) {
@@ -11,8 +12,8 @@ const getComponent = (component) => {
       return <Home />;
     case 'Cart':
       return <Cart />;
-    case 'Contacts':
-      return <Contacts />;
+    case 'Movimientos':
+      return <Movements />;
     case 'Settings':
       return <Settings />;
     default:
@@ -22,7 +23,7 @@ const getComponent = (component) => {
 
 export const DashBoardRoutes = ({ pathMain, pathSecondary }) => {
   const paths = [...pathMain, ...pathSecondary];
-  console.log(paths);
+
   return (
     <>
       <Switch>
