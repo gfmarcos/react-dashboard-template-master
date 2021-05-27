@@ -51,7 +51,7 @@ export const Home = () => {
         </Paper>
         <Paper className={fixedHeightPaper}>
           <Typography variant="h5" component="h1" className={classes.titleH1}>
-            Movimientos
+            Prueba Movimientos
           </Typography>
         </Paper>
       </Grid>
