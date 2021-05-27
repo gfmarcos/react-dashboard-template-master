@@ -27,7 +27,7 @@ export const DashBoardRoutes = ({ pathMain, pathSecondary }) => {
     <>
       <Switch>
         {paths.map(({ path, text }, index) => (
-          <Route key={index} exact path={path}>
+          <Route key={index} exact path={path} >
             {getComponent(text)}
           </Route>
         ))}

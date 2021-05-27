@@ -11,6 +11,6 @@ export const accountList = [
     type: '2',
     name: 'Ahorro',
     iban: 'ES66 2100 0418 4012 3456 7891',
-    balance: 8500,
+    balance: 85000,
   },
 ];
