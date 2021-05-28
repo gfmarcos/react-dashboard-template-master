@@ -99,7 +99,6 @@ const Register = ({ handleRegister }) => {
     },
     onSubmit: (values) => {
       handleRegister(values);
-      console.log(values);
       history.push({
         pathname: "/login",
         state: {

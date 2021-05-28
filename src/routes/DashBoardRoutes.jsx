@@ -1,22 +1,19 @@
-import React from 'react';
-import { Redirect, Route, Switch } from 'react-router';
-import { Cart } from '../pages/Cart';
-import { Contacts } from '../pages/Contacts';
-import { Home } from '../pages/Home';
-import { Settings } from '../pages/Settings';
-import { CreditCards } from '../pages/CreditCards';
+import React from "react";
+import { Redirect, Route, Switch } from "react-router";
+import { Home } from "../pages/Home";
+import { Settings } from "../pages/Settings";
+import { CreditCards } from "../pages/CreditCards";
+import { Movements } from '../pages/Movements';
 
 const getComponent = (component) => {
   switch (component) {
-    case 'Home':
+    case "Home":
       return <Home />;
-    case 'Cart':
-      return <Cart />;
-    case 'Contacts':
-      return <Contacts />;
-    case 'Settings':
+    case "Movimientos":
+      return <Movements />;
+    case "Settings":
       return <Settings />;
-    case 'Tarjetas':
+    case "Tarjetas":
       return <CreditCards />;
     default:
       return <Home />;
@@ -25,7 +22,6 @@ const getComponent = (component) => {
 
 export const DashBoardRoutes = ({ pathMain, pathSecondary }) => {
   const paths = [...pathMain, ...pathSecondary];
-  console.log(paths);
   return (
     <>
       <Switch>

@@ -21,7 +21,7 @@ const getAccount = (accountType) => accountList.find((account) => account.type =
 export const creditCardsMapper = () =>
   creditCards.map((creditCard) => ({
     ...creditCard,
-    number: `****${creditCard.number.slice(creditCard.number.length - 4, creditCard.number.length)}`,
+    numberMask: `****${creditCard.number.slice(creditCard.number.length - 4, creditCard.number.length)}`,
     name: getName(creditCard.type),
     logo: getLogo(creditCard.type),
     balance: getAccount(creditCard.accountType).balance,
