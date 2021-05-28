@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Typography, Paper, Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { creditCardsMapper } from '../data/creditCardsMapper';
 import { CreditCard } from '../components/CreditCard';
-import VisibilityIcon from '@material-ui/icons/Visibility';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -35,16 +34,9 @@ export const CreditCards = () => {
       </Typography>
       <div className={classes.creditFlex}>
         {creditCardsMapper().map((creditCard) => (
-          <CreditCard key={creditCard.id} {...creditCard} />
+          <CreditCard key={creditCard.id} {...creditCard} complete={true} />
         ))}
       </div>
-      <div className={classes.creditFlex}>
-        {creditCardsMapper().map((creditCard) => (
-          <VisibilityIcon key={creditCard.id} />
-        ))}
-      </div>
-      <Divider />
-      <CreditCard />
     </Paper>
   );
 };
