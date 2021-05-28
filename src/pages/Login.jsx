@@ -132,12 +132,6 @@ const Login = ({ handleLoggedIn }) => {
             Acceder
           </Button>
           <Grid container>
-            {/* Olvido Contraseña */}
-            <Grid item xs={12} sm={6}>
-              <Link href="#" variant="body2">
-                {'He olvidado mi contraseña'}
-              </Link>
-            </Grid>
             {/* Registro */}
             <Grid item xs={12} sm={6}>
             <Link to="/register" variant="body2">
