@@ -1,7 +1,6 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 import { Cart } from '../pages/Cart';
-import { Contacts } from '../pages/Contacts';
 import { Home } from '../pages/Home';
 import { Settings } from '../pages/Settings';
 import { CreditCards } from '../pages/CreditCards';
@@ -12,8 +11,6 @@ const getComponent = (component) => {
       return <Home />;
     case 'Cart':
       return <Cart />;
-    case 'Contacts':
-      return <Contacts />;
     case 'Settings':
       return <Settings />;
     case 'Tarjetas':

@@ -43,11 +43,8 @@ const useStyles = makeStyles((theme) => ({
   },
   // AppBar --> Barra de Navegación para desaparecer de la  pantalla
   appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(['width', 'margin'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
+    width: `calc(100% - ${drawerWidth}px)`,
+    marginLeft: drawerWidth,
   },
   // AppBar --> Barra de Navegación para aparecer en pantalla
   appBarShift: {
@@ -65,34 +62,34 @@ const useStyles = makeStyles((theme) => ({
     marginRight: 35,
   },
   // Botones del menú (Drawer) cuando el menú esté plegado
-  menuButtonHidden: {
-    display: 'none',
-  },
+  // menuButtonHidden: {
+  //   display: 'none',
+  // },
   // Titulo de las opciones del menú
   title: {
     flexGrow: 1,
   },
   // Menu (Drawer) Abierto
   drawerPaper: {
-    position: 'relative',
+    //position: 'relative',
     width: drawerWidth,
-    whiteSpace: 'nowrap',
-    transition: theme.transitions.create(['width'], {
+    //whiteSpace: 'nowrap',
+    /*transition: theme.transitions.create(['width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
-    }),
+    }),*/
   },
-  drawerPaperClosed: {
-    overflowX: 'hidden',
-    width: theme.spacing(7),
-    transition: theme.transitions.create(['width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9),
-    },
-  },
+  // drawerPaperClosed: {
+  //   overflowX: 'hidden',
+  //   width: theme.spacing(7),
+  //   transition: theme.transitions.create(['width'], {
+  //     easing: theme.transitions.easing.sharp,
+  //     duration: theme.transitions.duration.leavingScreen,
+  //   }),
+  //   [theme.breakpoints.up('sm')]: {
+  //     width: theme.spacing(9),
+  //   },
+  // },
   // Paper del componente
   paper: {
     display: 'flex',
@@ -115,6 +112,8 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(12),
     paddingBottom: theme.spacing(4),
   },
+
+
 }));
 
 const mainMenuList = [
@@ -156,32 +155,22 @@ export const DashBoard = ({ handleLoggedOut }) => {
   const [open, setOpen] = useState(true);
 
   // Método para controlar la Apertura del Drawer
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+  // const handleDrawerOpen = () => {
+  //   setOpen(true);
+  // };
 
   // Método para controlar el Cierre del Drawer
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <div className={classes.root}>
       <CssBaseline />
       {/* Barra de Navegación Superior */}
-      <AppBar className={clsx(classes.appBar, open && classes.appBarShift)} position="absolute">
+      <AppBar className={clsx(classes.appBar,  classes.appBarShift)} position="absolute">
         <Toolbar className={classes.toolbar}>
-          {/* Icono para abrir el Drawer */}
-          <IconButton
-            className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-          >
-            {/* Icono de Hamburger para plegar y desplegar */}
-            <MenuIcon />
-          </IconButton>
+          
           {/* Nombre de la aplicación / empresa */}
           <Typography component="h1" variant="h6" color="inherit" className={classes.title} noWrap>
             Banca Online
@@ -205,24 +194,23 @@ export const DashBoard = ({ handleLoggedOut }) => {
       </AppBar>
       {/* Drawer */}
       <Drawer
-        open={open}
+        open={open} 
+        variant="permanent"
         classes={{
-          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClosed),
+          paper: clsx(classes.drawerPaper,  ),
         }}
       >
         <div className={classes.toolbarIcon}>
-          <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon />
+          <IconButton /**onClick={handleDrawerClose}*/>
+            {/** INGENIA BANK HERE */}
+            INGENIA BANK
           </IconButton>
         </div>
-        {/* Divider para separar los elementos del menú */}
-        <Divider />
         {/* Listado de elementos de navgación del menú */}
-        <MenuListItems list={mainMenuList} handleDrawer={handleDrawerClose} />
-        {/* Divider para separar los elementos del menú */}
-        <Divider />
+        <MenuListItems list={mainMenuList} /*handleDrawer={handleDrawerClose}*/ />
+        
         {/* Listado de elementos de navegación del menú de Settings*/}
-        <MenuListItems list={secondaryMenuList} handleDrawer={handleDrawerClose} />
+        <MenuListItems list={secondaryMenuList} /*handleDrawer={handleDrawerClose}*/ />
       </Drawer>
 
       {/* El contenido del Dashboard */}
