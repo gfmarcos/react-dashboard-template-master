@@ -44,7 +44,7 @@ const MenuListItems = ({ list }) => {
 
   const navegar = (ruta) => {
     history.push(ruta);
-    handleDrawer();
+    //handleDrawer();
   };
   // Color del background de la lista en función de la ruta actual
   const changeBackGround =  (ruta) => {
