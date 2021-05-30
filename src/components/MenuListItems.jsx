@@ -1,26 +1,23 @@
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
-import React from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import React from "react"
+import { useHistory, useLocation } from "react-router-dom";
 
 // Iconos de Material UI
-import HomeIcon from '@material-ui/icons/Home';
-import CartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import SettingsIcon from '@material-ui/icons/Settings';
-import CreditCardIcon from '@material-ui/icons/CreditCard';
+import HomeIcon from "@material-ui/icons/Home";
+import SettingsIcon from "@material-ui/icons/Settings";
+import CreditCardIcon from "@material-ui/icons/CreditCard";
+import SyncAltOutlinedIcon from "@material-ui/icons/SyncAltOutlined";
 
 const getIcon = (icon) => {
   switch (icon) {
-    case 'HOME':
+    case "HOME":
       return <HomeIcon />;
-    case 'CART':
-      return <CartIcon />;
-    case 'PEOPLE':
-      return <PeopleIcon />;
-    case 'SETTINGS':
+    case "MOVEMENTS":
+      return <SyncAltOutlinedIcon />;
+    case "SETTINGS":
       return <SettingsIcon />;
-    case 'TARJETAS':
+    case "TARJETAS":
       return <CreditCardIcon />;
     default:
       return <HomeIcon />;
@@ -46,9 +43,8 @@ const MenuListItems = ({ list }) => {
   const location = useLocation();
 
   const navegar = (ruta) => {
-    console.log(ruta);
     history.push(ruta);
-    //handleDrawer();
+    handleDrawer();
   };
   // Color del background de la lista en función de la ruta actual
   const changeBackGround =  (ruta) => {

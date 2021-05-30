@@ -7,13 +7,13 @@ import { CreditCards } from '../pages/CreditCards';
 
 const getComponent = (component) => {
   switch (component) {
-    case 'Home':
+    case "Home":
       return <Home />;
-    case 'Cart':
-      return <Cart />;
-    case 'Settings':
+    case "Movimientos":
+      return <Movements />;
+    case "Settings":
       return <Settings />;
-    case 'Tarjetas':
+    case "Tarjetas":
       return <CreditCards />;
     default:
       return <Home />;
@@ -22,7 +22,6 @@ const getComponent = (component) => {
 
 export const DashBoardRoutes = ({ pathMain, pathSecondary }) => {
   const paths = [...pathMain, ...pathSecondary];
-  console.log(paths);
   return (
     <>
       <Switch>
