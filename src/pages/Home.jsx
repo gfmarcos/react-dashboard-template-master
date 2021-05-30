@@ -49,17 +49,18 @@ export const Home = () => {
             ))}
           </div>
         </Paper>
-        <Paper className={fixedHeightPaper}>
-          <Typography variant="h5" component="h1" className={classes.titleH1}>
-            Prueba Movimientos
-          </Typography>
-        </Paper>
+        
       </Grid>
       <Grid item md={5}>
         <Paper className={fixedHeightPaper}>
           <Typography variant="h5" component="h1" className={classes.titleH1}>
             Balance total
           </Typography>
+        </Paper>
+      </Grid>
+      <Grid item xs={12}>
+        <Paper>
+          <Movements />
         </Paper>
       </Grid>
       {/*       <Grid item xs={12} md={8} >

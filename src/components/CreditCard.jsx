@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Card, CardContent } from '@material-ui/core';
-import { creditCardsMapper } from '../data/creditCardsMapper';
 import pink from '@material-ui/core/colors/pink';
 
 const useStyles = makeStyles((theme) => {
