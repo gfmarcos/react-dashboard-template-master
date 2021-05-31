@@ -56,7 +56,7 @@ export const Home = () => {
       <Grid item md={5}>
         <Paper className={fixedHeightPaper}>
           <Typography variant="h5" component="h1" className={classes.titleH1}>
-            <Balances/>
+            <Balances />
           </Typography>
         </Paper>
       </Grid>
