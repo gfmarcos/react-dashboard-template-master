@@ -1,26 +1,27 @@
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
-import React from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import React from "react"
+import { useHistory, useLocation } from "react-router-dom";
 
 // Iconos de Material UI
-import HomeIcon from '@material-ui/icons/Home';
-import CartIcon from '@material-ui/icons/ShoppingCart';
-import PeopleIcon from '@material-ui/icons/People';
-import SettingsIcon from '@material-ui/icons/Settings';
-import CreditCardIcon from '@material-ui/icons/CreditCard';
+import HomeIcon from "@material-ui/icons/Home";
+import CreditCardIcon from "@material-ui/icons/CreditCard";
+import SyncAltOutlinedIcon from "@material-ui/icons/SyncAltOutlined";
+import TimelineIcon from '@material-ui/icons/Timeline';
+
+// Colores Material UI
+
+import { pink } from "@material-ui/core/colors";
 
 const getIcon = (icon) => {
   switch (icon) {
-    case 'HOME':
+    case "HOME":
       return <HomeIcon />;
-    case 'CART':
-      return <CartIcon />;
-    case 'PEOPLE':
-      return <PeopleIcon />;
-    case 'SETTINGS':
-      return <SettingsIcon />;
-    case 'TARJETAS':
+    case "MOVEMENTS":
+      return <SyncAltOutlinedIcon />;
+    case "BALANCE":
+      return <TimelineIcon />;
+    case "TARJETAS":
       return <CreditCardIcon />;
     default:
       return <HomeIcon />;
@@ -31,7 +32,10 @@ const getIcon = (icon) => {
 const useStyles = makeStyles((theme) => ({
 
   selectedBackGround: {
-    backgroundColor: '#CD092C',
+    backgroundColor: pink[500],
+    color: '#FFF',
+    pointerEvents: 'none',
+    '& svg': {color: 'white'}
   },
   
   unselectedBackGround: {
@@ -46,7 +50,6 @@ const MenuListItems = ({ list }) => {
   const location = useLocation();
 
   const navegar = (ruta) => {
-    console.log(ruta);
     history.push(ruta);
     //handleDrawer();
   };
