@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { creditCardsMapper } from '../data/creditCardsMapper';
 import { CreditCard } from '../components/CreditCard';
 import { Movements } from '../pages/Movements';
+import { Balances } from '../components/Balances';
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => {
       flexDirection: 'column',
       overflow: 'auto',
       padding: theme.spacing(2),
-      margin: theme.spacing(2),
+      //margin: theme.spacing(2),
     },
     creditFlex: {
       display: 'flex',
@@ -55,7 +56,7 @@ export const Home = () => {
       <Grid item md={5}>
         <Paper className={fixedHeightPaper}>
           <Typography variant="h5" component="h1" className={classes.titleH1}>
-            Balance total
+            <Balances/>
           </Typography>
         </Paper>
       </Grid>
