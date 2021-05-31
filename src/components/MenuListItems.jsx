@@ -8,6 +8,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import SettingsIcon from "@material-ui/icons/Settings";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import SyncAltOutlinedIcon from "@material-ui/icons/SyncAltOutlined";
+import TimelineIcon from '@material-ui/icons/Timeline';
 
 const getIcon = (icon) => {
   switch (icon) {
@@ -15,8 +16,8 @@ const getIcon = (icon) => {
       return <HomeIcon />;
     case "MOVEMENTS":
       return <SyncAltOutlinedIcon />;
-    case "SETTINGS":
-      return <SettingsIcon />;
+    case "BALANCE":
+      return <TimelineIcon />;
     case "TARJETAS":
       return <CreditCardIcon />;
     default:

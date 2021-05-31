@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Componentes de Material UI
-import { AppBar, IconButton, Toolbar, Typography, Badge, Drawer, Divider, Container, Grid } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Typography, Badge, Drawer, Container, Grid } from '@material-ui/core';
 
 // Iconos de Material UI
 import MenuIcon from '@material-ui/icons/Menu';
@@ -139,9 +139,9 @@ const mainMenuList = [
 
 const secondaryMenuList = [
   {
-    text: 'Settings',
-    path: '/settings',
-    icon: 'SETTINGS',
+    text: 'Balance total',
+    path: '/balance',
+    icon: 'BALANCE',
   },
 ];
 
