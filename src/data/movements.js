@@ -48,4 +48,4 @@ export const movements = [
     accountPayment: true,
 
   },
-];
+  ];

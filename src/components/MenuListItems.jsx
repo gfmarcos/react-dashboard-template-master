@@ -1,12 +1,17 @@
 import { List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
-import React from "react";
-import { useHistory } from "react-router-dom";
+import { makeStyles } from '@material-ui/core/styles';
+import React from "react"
+import { useHistory, useLocation } from "react-router-dom";
 
 // Iconos de Material UI
 import HomeIcon from "@material-ui/icons/Home";
-import SettingsIcon from "@material-ui/icons/Settings";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import SyncAltOutlinedIcon from "@material-ui/icons/SyncAltOutlined";
+import TimelineIcon from '@material-ui/icons/Timeline';
+
+// Colores Material UI
+
+import { pink } from "@material-ui/core/colors";
 
 const getIcon = (icon) => {
   switch (icon) {
@@ -14,8 +19,8 @@ const getIcon = (icon) => {
       return <HomeIcon />;
     case "MOVEMENTS":
       return <SyncAltOutlinedIcon />;
-    case "SETTINGS":
-      return <SettingsIcon />;
+    case "BALANCE":
+      return <TimelineIcon />;
     case "TARJETAS":
       return <CreditCardIcon />;
     default:
@@ -23,18 +28,49 @@ const getIcon = (icon) => {
   }
 };
 
-const MenuListItems = ({ list, handleDrawer }) => {
+// Estilos 
+const useStyles = makeStyles((theme) => ({
+
+  selectedBackGround: {
+    backgroundColor: pink[500],
+    color: '#FFF',
+    pointerEvents: 'none',
+    '& svg': {color: 'white'}
+  },
+  
+  unselectedBackGround: {
+    backgroundColor: 'white',
+  }
+}));
+
+
+/* const MenuListItems = ({ list, handleDrawer }) => {
   const history = useHistory();
 
   const navegar = (ruta) => {
     history.push(ruta);
     handleDrawer();
+  }; */
+
+
+const MenuListItems = ({ list, handleDrawer }) => {
+  const history = useHistory();
+  const classes = useStyles();
+  const location = useLocation();
+
+  const navegar = (ruta) => {
+    history.push(ruta);
+    handleDrawer();
   };
+  // Color del background de la lista en función de la ruta actual
+  const changeBackGround =  (ruta) => {
+    return ruta===location.pathname ? true : false;
+  }
 
   return (
     <List>
       {list.map(({ text, path, icon }, index) => (
-        <ListItem key={index} button onClick={() => navegar(path)}>
+        <ListItem key={index}  className={changeBackGround(path) ? classes.selectedBackGround : classes.unselectedBackGround} button onClick={() => navegar(path)}>
           <ListItemIcon>
             {/* Llamamos al método getIcon que nos va a devover el 
             componente Icono que toque */}

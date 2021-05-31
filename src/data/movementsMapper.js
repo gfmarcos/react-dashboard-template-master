@@ -10,4 +10,4 @@ export const movementsMapper = () =>
         ...movement,
         iban: getAccount(movement.accountType).iban,
         creditCard: `****${getCreditCard(movement.creditCardType).number.slice(getCreditCard(movement.creditCardType).number.length - 4, getCreditCard(movement.creditCardType).number.length)}`,
-    }))
+    }));

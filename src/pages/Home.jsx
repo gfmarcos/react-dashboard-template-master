@@ -1,33 +1,35 @@
-import React from "react";
-import { Typography, Grid, Paper } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import clsx from "clsx";
-import { creditCardsMapper } from "../data/creditCardsMapper";
-import { CreditCard } from "../components/CreditCard";
-import { Movements } from "./Movements";
+import React from 'react';
+import { Typography, Grid, Paper } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import clsx from 'clsx';
+import { creditCardsMapper } from '../data/creditCardsMapper';
+import { CreditCard } from '../components/CreditCard';
+import { Movements } from '../pages/Movements';
+import { Balances } from '../components/Balances';
 
 const useStyles = makeStyles((theme) => {
   return {
     fixedHeight: {
-      height: "auto",
+      height: 'auto',
     },
     paper: {
-      display: "flex",
-      flexDirection: "column",
-      overflow: "auto",
+      display: 'flex',
+      flexDirection: 'column',
+      overflow: 'auto',
       padding: theme.spacing(2),
+      //margin: theme.spacing(2),
     },
     creditFlex: {
-      display: "flex",
-      justifyContent: "space-between",
-      flexWrap: "wrap",
-      "& > div": {
-        flexBasis: "32%",
-        marginBottom: "20px",
+      display: 'flex',
+      justifyContent: 'space-between',
+      flexWrap: 'wrap',
+      '& > div': {
+        flexBasis: '32%',
+        marginBottom: '20px',
       },
     },
     titleH1: {
-      marginBottom: "20px",
+      marginBottom: '20px',
     },
   };
 });
@@ -54,11 +56,10 @@ export const Home = () => {
       <Grid item md={5}>
         <Paper className={fixedHeightPaper}>
           <Typography variant="h5" component="h1" className={classes.titleH1}>
-            Balance total
+            <Balances />
           </Typography>
         </Paper>
       </Grid>
-
       <Grid item xs={12}>
         <Paper>
           <Movements />

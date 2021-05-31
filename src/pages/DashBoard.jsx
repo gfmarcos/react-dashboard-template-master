@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 // Componentes de Material UI
-import { AppBar, IconButton, Toolbar, Typography, Badge, Drawer, Divider, Container, Grid } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, Typography, Badge, Drawer, Container, Grid } from '@material-ui/core';
 
 // Iconos de Material UI
 import MenuIcon from '@material-ui/icons/Menu';
@@ -115,6 +115,8 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(12),
     paddingBottom: theme.spacing(4),
   },
+
+
 }));
 
 const mainMenuList = [
@@ -137,9 +139,9 @@ const mainMenuList = [
 
 const secondaryMenuList = [
   {
-    text: 'Settings',
-    path: '/settings',
-    icon: 'SETTINGS',
+    text: 'Balance total',
+    path: '/balance',
+    icon: 'BALANCE',
   },
 ];
 
@@ -200,22 +202,21 @@ export const DashBoard = ({ handleLoggedOut }) => {
       </AppBar>
       {/* Drawer */}
       <Drawer
-        open={open}
+        open={open} 
+        variant="temporary"
         classes={{
-          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClosed),
+          paper: clsx(classes.drawerPaper,  !open && classes.drawerPaperClosed),
         }}
       >
         <div className={classes.toolbarIcon}>
           <IconButton onClick={handleDrawerClose}>
+            INGENIA BANK
             <ChevronLeftIcon />
           </IconButton>
         </div>
-        {/* Divider para separar los elementos del menú */}
-        <Divider />
         {/* Listado de elementos de navgación del menú */}
         <MenuListItems list={mainMenuList} handleDrawer={handleDrawerClose} />
-        {/* Divider para separar los elementos del menú */}
-        <Divider />
+        
         {/* Listado de elementos de navegación del menú de Settings*/}
         <MenuListItems list={secondaryMenuList} handleDrawer={handleDrawerClose} />
       </Drawer>
