@@ -31,7 +31,7 @@ export const Balances = ({ complete }) => {
         Balance general
       </Typography>
       <AreaChart
-        width={250}
+        width={400}
         height={180}
         data={datas}
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
@@ -42,8 +42,8 @@ export const Balances = ({ complete }) => {
             <stop offset="95%" stopColor={colorPink} stopOpacity={0} />
           </linearGradient>
         </defs>
-        <XAxis dataKey="name" />
-        <YAxis />
+        <XAxis dataKey="name" fontSize={'50%'}/>
+        <YAxis tickSize={1} fontSize={'50%'}/>
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Area
@@ -73,7 +73,7 @@ export const Balances = ({ complete }) => {
           </linearGradient>
         </defs>
         <XAxis dataKey="name" />
-        <YAxis />
+        <YAxis tickSize={1}/>
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Area
