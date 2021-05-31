@@ -44,14 +44,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const MenuListItems = ({ list }) => {
+/* const MenuListItems = ({ list, handleDrawer }) => {
+  const history = useHistory();
+
+  const navegar = (ruta) => {
+    history.push(ruta);
+    handleDrawer();
+  }; */
+
+
+const MenuListItems = ({ list, handleDrawer }) => {
   const history = useHistory();
   const classes = useStyles();
   const location = useLocation();
 
   const navegar = (ruta) => {
     history.push(ruta);
-    //handleDrawer();
+    handleDrawer();
   };
   // Color del background de la lista en función de la ruta actual
   const changeBackGround =  (ruta) => {
